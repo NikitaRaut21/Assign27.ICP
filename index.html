@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Theme</title>
+    <style>
+        .btn-squ{
+            background-color: orangered;
+            
+        }
+        
+        .theme-icon{
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+
+        }
+        p{
+            font-size: 30px;
+        }
+        .active{
+            border: 1px solid black;
+        }
+        .theme-dark{
+            background-color: black;
+            color: #fff;
+        }
+        .theme-light{
+            background-color: #f09d5d;
+            color: black;
+        }
+    </style>
+</head>
+<body id="body">
+    <div>
+        <img src="dark.png" class="theme-icon active" id="img-dark" onclick="darkMode()">
+        <img src="light1.png" class="theme-icon" id="img-light" onclick="lightMode()">
+        <h1>This is Light/Dark mode Theme Changer</h1>
+        <p>
+            Apps must opt in to Force Dark by setting android:forceDarkAllowed="true" in the activity's theme. This attribute is set on all of the system- and AndroidX-provided light themes, such as Theme.Material.Light. When you use Force Dark, test your app thoroughly and exclude views as needed.
+    </p>
+    </div>
+    <script>
+        function darkMode(){
+            const imgDark = document.getElementById('img-dark');
+            imgDark.classList.add('active');
+
+            const imglight = document.getElementById('img-light');
+            imglight.classList.remove('active');
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.className = "theme-dark";
+
+
+
+        }
+        function lightMode(){
+            const imgDark = document.getElementById('img-dark');
+            imgDark.classList.remove('active');
+
+            const imglight = document.getElementById('img-light');
+            imglight.classList.add('active');
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.className = "theme-light";
+        }
+    </script>
+        
+
+    
+    
+    
+</body>
+</html>
